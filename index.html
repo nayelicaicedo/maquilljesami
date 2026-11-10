@@ -1,0 +1,395 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Maquillaje Sami</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Concepto: boutique de maquillaje en tono baya. El hero es una fila de labiales con nombre de tono; cada seccion alterna fondo suave y bloque oscuro. */
+:root {
+  --bg: #fbf3f6;
+  --surface: #ffffff;
+  --band: #f3e4ee;
+  --fg: #2a1220;
+  --muted: #6e5260;
+  --line: #e6cfdc;
+  --accent: #b0124f;
+  --accent-fg: #ffffff;
+  --coral: #ff8e7a;
+  --dark: #2a1220;
+  --dark-fg: #fbeef4;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a0b14;
+    --surface: #26111d;
+    --band: #2b1422;
+    --fg: #fbeef4;
+    --muted: #c9a9ba;
+    --line: #4a2a3b;
+    --accent: #ff6b9d;
+    --accent-fg: #2a1220;
+    --coral: #ff8e7a;
+    --dark: #0f060b;
+    --dark-fg: #fbeef4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a0b14;
+  --surface: #26111d;
+  --band: #2b1422;
+  --fg: #fbeef4;
+  --muted: #c9a9ba;
+  --line: #4a2a3b;
+  --accent: #ff6b9d;
+  --accent-fg: #2a1220;
+  --coral: #ff8e7a;
+  --dark: #0f060b;
+  --dark-fg: #fbeef4;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+
+/* Barra superior */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 12px; }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 22px; text-decoration: none; letter-spacing: -0.02em; }
+.brand span { color: var(--accent); }
+.nav { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: 14px; font-weight: 500; }
+.nav a { text-decoration: none; padding: 4px 0; color: var(--muted); }
+.nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding-block: 56px 48px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(40px, 7vw, 72px); font-weight: 800; margin-top: 12px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p.lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 52ch; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.btn {
+  display: inline-block; font: inherit; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer;
+  padding: 13px 24px; border-radius: 999px; border: 2px solid var(--accent);
+  background: var(--accent); color: var(--accent-fg);
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--accent); }
+
+.lips { display: flex; flex-direction: column; gap: 10px; }
+.lip {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 16px 10px 10px;
+}
+.lip i { flex: none; width: 46px; height: 46px; border-radius: 12px 12px 12px 12px; background: var(--c); box-shadow: inset 0 -10px 0 rgb(0 0 0 / 0.12); }
+.lip b { font-family: var(--font-display); font-size: 17px; }
+.lip small { display: block; color: var(--muted); font-size: 13px; line-height: 1.3; }
+.lip:nth-child(2) { margin-left: 22px; }
+.lip:nth-child(3) { margin-left: 44px; }
+.lip:nth-child(4) { margin-left: 22px; }
+
+/* Secciones */
+section { padding-block: 72px; }
+.section-head { max-width: 640px; margin-bottom: 36px; }
+.section-head h2 { font-size: clamp(30px, 4.5vw, 44px); font-weight: 800; margin-top: 8px; }
+.section-head p { margin-top: 14px; color: var(--muted); }
+
+#quienes { background: var(--band); }
+.about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 40px; align-items: start; }
+.about p + p { margin-top: 16px; }
+.about .story { font-size: 17px; }
+.facts { display: grid; gap: 12px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.fact b { display: block; font-family: var(--font-display); font-size: 20px; color: var(--accent); }
+.fact span { color: var(--muted); font-size: 14px; }
+
+/* Productos */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.card h3 { font-size: 22px; font-weight: 700; }
+.card p { color: var(--muted); font-size: 15px; }
+.dots { display: flex; gap: 8px; margin-top: auto; padding-top: 4px; }
+.dots i { width: 28px; height: 28px; border-radius: 50%; background: var(--c); border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line); }
+.tag { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Por que elegirnos */
+#porque { background: var(--dark); color: var(--dark-fg); }
+#porque .section-head p { color: color-mix(in srgb, var(--dark-fg) 72%, transparent); }
+#porque .eyebrow { color: var(--coral); }
+.reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; }
+.reason { border-top: 2px solid var(--coral); padding-top: 16px; min-width: 0; }
+.reason h3 { font-size: 21px; font-weight: 700; }
+.reason p { margin-top: 8px; color: color-mix(in srgb, var(--dark-fg) 75%, transparent); font-size: 15px; }
+
+/* Contacto */
+.contact { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
+.channels { display: grid; gap: 12px; }
+.channel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; }
+.channel small { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.channel span { font-family: var(--font-display); font-size: 19px; font-weight: 700; overflow-wrap: anywhere; }
+form { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: grid; gap: 16px; min-width: 0; }
+label { display: grid; gap: 6px; font-size: 14px; font-weight: 700; }
+input, select, textarea {
+  font: inherit; font-weight: 400; color: var(--fg); background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 11px 13px; width: 100%; min-width: 0;
+}
+textarea { min-height: 110px; resize: vertical; }
+.hint { font-size: 13px; color: var(--muted); font-weight: 400; }
+.result { display: grid; gap: 10px; background: var(--band); border-radius: 12px; padding: 16px; }
+.result pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 15px; }
+.err { color: var(--accent); font-size: 14px; font-weight: 700; }
+
+footer { padding-block: 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+
+@media (max-width: 820px) {
+  .hero .wrap, .about, .contact { grid-template-columns: 1fr; }
+  section { padding-block: 56px; }
+  .hero { padding-block: 36px 24px; }
+  .lip:nth-child(n) { margin-left: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .nav a { transition: filter 0.15s, color 0.15s; }
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Maquillaje <span>Sami</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#quienes">Quiénes somos</a>
+      <a href="#productos">Nuestros productos</a>
+      <a href="#porque">Por qué elegirnos</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Tienda de maquillaje</p>
+        <h1>Tu color, tu piel, <em>tu estilo</em>.</h1>
+        <p class="lead">En Maquillaje Sami encuentras labiales, bases, sombras y accesorios para todos los tonos de piel, con asesoría para que elijas lo que de verdad te favorece.</p>
+        <div class="cta-row">
+          <a class="btn" href="#productos">Ver productos</a>
+          <a class="btn ghost" href="#contacto">Escríbenos</a>
+        </div>
+      </div>
+      <div class="lips" aria-label="Algunos tonos de labial">
+        <div class="lip" style="--c:#b0124f"><i></i><div><b>Tono 01 · Cereza</b><small>Rojo profundo, acabado satinado</small></div></div>
+        <div class="lip" style="--c:#e2606f"><i></i><div><b>Tono 02 · Guayaba</b><small>Rosado coral, uso diario</small></div></div>
+        <div class="lip" style="--c:#a8503f"><i></i><div><b>Tono 03 · Canela</b><small>Nude cálido, acabado mate</small></div></div>
+        <div class="lip" style="--c:#6d1a3c"><i></i><div><b>Tono 04 · Mora</b><small>Vino oscuro para la noche</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="quienes">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">Quiénes somos</p>
+        <div class="section-head" style="margin-bottom:20px"><h2>Una tienda hecha para que te veas y te sientas bien</h2></div>
+        <div class="story">
+          <p>Maquillaje Sami nació de una idea sencilla: que comprar maquillaje no debería ser complicado ni caro. Reunimos productos de calidad para el rostro, los ojos y los labios, y te ayudamos a escoger el tono y el acabado que va con tu piel.</p>
+          <p>Atendemos tanto a quien se maquilla por primera vez como a quien ya tiene su rutina y busca renovarla. Aquí no se trata de cubrirte, sino de resaltar lo que ya tienes.</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Todos los tonos</b><span>Bases y correctores desde pieles muy claras hasta muy oscuras.</span></div>
+        <div class="fact"><b>Asesoría cercana</b><span>Te recomendamos según tu tipo de piel, tu rutina y tu presupuesto.</span></div>
+        <div class="fact"><b>Para toda ocasión</b><span>Looks de día, de oficina, de fiesta y de novia.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Nuestros productos</p>
+        <h2>Todo lo que necesitas para tu maquillaje</h2>
+        <p>Seis categorías para armar tu look completo, de la base a los labios.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Labios</span>
+          <h3>Labiales y brillos</h3>
+          <p>Mate, satinados y cremosos, en rojos, rosados, nudes y vinos. Los de larga duración aguantan todo el día.</p>
+          <div class="dots" aria-hidden="true"><i style="--c:#b0124f"></i><i style="--c:#e2606f"></i><i style="--c:#a8503f"></i><i style="--c:#6d1a3c"></i></div>
+        </article>
+        <article class="card">
+          <span class="tag">Rostro</span>
+          <h3>Bases y correctores</h3>
+          <p>Cobertura ligera, media o alta, con tonos para pieles claras, medias, trigueñas y oscuras. Te ayudamos a encontrar tu subtono.</p>
+          <div class="dots" aria-hidden="true"><i style="--c:#f2d3bd"></i><i style="--c:#e0b08c"></i><i style="--c:#b98159"></i><i style="--c:#7b4a31"></i></div>
+        </article>
+        <article class="card">
+          <span class="tag">Ojos</span>
+          <h3>Sombras y paletas</h3>
+          <p>Paletas de tonos tierra, rosados y brillantes, y sombras sueltas para combinar a tu gusto.</p>
+          <div class="dots" aria-hidden="true"><i style="--c:#c98a5e"></i><i style="--c:#8a4b5c"></i><i style="--c:#d9a7b8"></i><i style="--c:#3e2a4a"></i></div>
+        </article>
+        <article class="card">
+          <span class="tag">Mejillas</span>
+          <h3>Rubores e iluminadores</h3>
+          <p>En polvo y en crema, para dar color y un brillo suave en pómulos, nariz y arco de las cejas.</p>
+          <div class="dots" aria-hidden="true"><i style="--c:#f08a8a"></i><i style="--c:#f0a87a"></i><i style="--c:#e9c3a0"></i><i style="--c:#d77a9a"></i></div>
+        </article>
+        <article class="card">
+          <span class="tag">Mirada</span>
+          <h3>Pestañinas, delineadores y cejas</h3>
+          <p>Pestañinas de volumen y de longitud, delineadores líquidos y en lápiz, y productos para definir las cejas.</p>
+          <div class="dots" aria-hidden="true"><i style="--c:#1f1318"></i><i style="--c:#4a2e26"></i><i style="--c:#6b4a3a"></i></div>
+        </article>
+        <article class="card">
+          <span class="tag">Herramientas</span>
+          <h3>Brochas y accesorios</h3>
+          <p>Brochas, esponjas, cosmetiqueras y rizadores de pestañas para aplicar el maquillaje con mejor resultado.</p>
+          <div class="dots" aria-hidden="true"><i style="--c:#f3c9d6"></i><i style="--c:#c9a0dc"></i><i style="--c:#9ad0c2"></i></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="porque">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Por qué elegirnos</p>
+        <h2>Por qué comprar en Maquillaje Sami</h2>
+        <p>Cuatro razones por las que nuestras clientas vuelven.</p>
+      </div>
+      <div class="reasons">
+        <div class="reason"><h3>Productos de buena calidad</h3><p>Escogemos cada referencia pensando en que dure, se vea bien y cuide tu piel.</p></div>
+        <div class="reason"><h3>Precios accesibles</h3><p>Opciones para cada presupuesto, sin sacrificar el resultado.</p></div>
+        <div class="reason"><h3>Te asesoramos de verdad</h3><p>Te preguntamos por tu piel y tu rutina antes de recomendarte algo.</p></div>
+        <div class="reason"><h3>Tonos para todas</h3><p>Una gama amplia de bases y labiales para que nadie se quede sin su tono.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap contact">
+      <div>
+        <div class="section-head" style="margin-bottom:24px">
+          <p class="eyebrow">Contáctanos</p>
+          <h2>Cuéntanos qué buscas</h2>
+          <p>Escríbenos para consultar productos, tonos o pedidos. Te respondemos lo más pronto posible.</p>
+        </div>
+        <div class="channels">
+          <div class="channel"><small>WhatsApp</small><span>[Tu número de WhatsApp]</span></div>
+          <div class="channel"><small>Correo</small><span>[Tu correo electrónico]</span></div>
+          <div class="channel"><small>Instagram</small><span>@[tu_usuario]</span></div>
+        </div>
+      </div>
+
+      <form id="form" novalidate>
+        <label for="nombre">Tu nombre
+          <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. María Gómez">
+        </label>
+        <label for="interes">Qué te interesa
+          <select id="interes" name="interes">
+            <option>Labiales y brillos</option>
+            <option>Bases y correctores</option>
+            <option>Sombras y paletas</option>
+            <option>Rubores e iluminadores</option>
+            <option>Pestañinas, delineadores y cejas</option>
+            <option>Brochas y accesorios</option>
+            <option>Otra consulta</option>
+          </select>
+        </label>
+        <label for="mensaje">Tu mensaje
+          <textarea id="mensaje" name="mensaje" placeholder="Ej. Busco una base para piel mixta, tono medio."></textarea>
+        </label>
+        <p class="hint">Este formulario arma tu mensaje listo para copiar y enviarlo a nuestro WhatsApp o correo.</p>
+        <p class="err" id="err" role="alert" hidden></p>
+        <button class="btn" type="submit">Preparar mensaje</button>
+        <div class="result" id="result" hidden>
+          <pre id="texto"></pre>
+          <button class="btn ghost" type="button" id="copiar">Copiar mensaje</button>
+          <p class="hint" id="copiado" hidden></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Maquillaje Sami</span>
+    <span>Tu color, tu piel, tu estilo.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById("form");
+  var err = document.getElementById("err");
+  var result = document.getElementById("result");
+  var texto = document.getElementById("texto");
+  var copiado = document.getElementById("copiado");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nombre = document.getElementById("nombre").value.trim();
+    var interes = document.getElementById("interes").value;
+    var mensaje = document.getElementById("mensaje").value.trim();
+    if (!nombre || !mensaje) {
+      err.textContent = "Escribe tu nombre y tu mensaje para continuar.";
+      err.hidden = false;
+      result.hidden = true;
+      return;
+    }
+    err.hidden = true;
+    texto.textContent = "Hola, soy " + nombre + ". Me interesa: " + interes + ".\n" + mensaje;
+    copiado.hidden = true;
+    result.hidden = false;
+  });
+
+  document.getElementById("copiar").addEventListener("click", function () {
+    var t = texto.textContent;
+    function ok() { copiado.textContent = "Mensaje copiado."; copiado.hidden = false; }
+    function manual() {
+      var r = document.createRange();
+      r.selectNodeContents(texto);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      copiado.textContent = "Selecciona y copia el texto de arriba.";
+      copiado.hidden = false;
+    }
+    try {
+      navigator.clipboard.writeText(t).then(ok, manual);
+    } catch (e) { manual(); }
+  });
+})();
+</script>
+
+</body></html>
